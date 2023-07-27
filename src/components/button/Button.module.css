@@ -1,7 +1,8 @@
 .moviesButton {
   display: flex;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  /* background-color: rgb(240, 240, 240); */
+  background-color: rgb(198, 194, 194);
   font-weight: 700;
   font-size: 15px;
   margin: 20px 0 20px 40px;
@@ -11,4 +12,9 @@
   border: none;
   color: #757575;
   cursor: pointer;
+}
+
+.moviesButton:focus,
+.moviesButton:hover {
+  background-color: rgb(210, 209, 209);
 }
