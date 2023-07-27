@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { CommonLayout } from './commonlayout/CommonLayout';
 import { lazy } from 'react';
 
-const Home = lazy(() => import('./pages/Home'));
+const Home = lazy(() => import('./pages/home/Home'));
 
 export const App = () => {
   return (

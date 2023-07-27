@@ -1,0 +1,15 @@
+.trendingContainer {
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.trendingListItem::before {
+  content: '~';
+  font-weight: bolder;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.trendingTitle {
+  margin-bottom: 20px;
+}
