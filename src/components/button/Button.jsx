@@ -4,7 +4,7 @@ import { FormPreviousLink } from 'grommet-icons';
 export const Button = () => {
   return (
     <button className={css.moviesButton}>
-      <FormPreviousLink color="black" />
+      <FormPreviousLink color="#757575" />
       Go back
     </button>
   );

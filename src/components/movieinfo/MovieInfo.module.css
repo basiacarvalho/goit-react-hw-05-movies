@@ -1,0 +1,21 @@
+.movieContainer {
+  display: flex;
+  margin-left: 40px;
+}
+
+.movieImage {
+  margin-right: 35px;
+}
+
+.description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.description:last-child {
+  margin-bottom: 15px;
+}
+
+.title {
+  margin-top: 15px;
+}
