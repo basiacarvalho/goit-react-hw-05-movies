@@ -5,8 +5,6 @@ import { lazy } from 'react';
 const Home = lazy(() => import('../pages/home/Home'));
 const Movies = lazy(() => import('../pages/movies/Movies'));
 const MovieDetails = lazy(() => import('../pages/moviedetails/MovieDetails'));
-const Cast = lazy(() => import('../pages/cast/Cast'));
-const Reviews = lazy(() => import('../pages/reviews/Reviews'));
 
 export const App = () => {
   return (
@@ -15,8 +13,8 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="movies" element={<Movies />} />
         <Route path="movies/:movieId" element={<MovieDetails />} />
-        <Route path="movies/:movieId/cast" element={<Cast />} />
-        <Route path="movies/:movieId/reviews" element={<Reviews />} />
+        <Route path="movies/:movieId/cast" element={<MovieDetails />} />
+        <Route path="movies/:movieId/reviews" element={<MovieDetails />} />
       </Route>
     </Routes>
   );

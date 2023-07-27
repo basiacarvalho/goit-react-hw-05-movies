@@ -18,4 +18,6 @@
 
 .navigationItem {
   cursor: pointer;
+  color: #757575;
+  font-weight: 500;
 }
