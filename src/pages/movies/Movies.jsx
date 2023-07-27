@@ -1,10 +1,11 @@
-import css from './Movies.module.css';
-import { FormPreviousLink } from 'grommet-icons';
+import { SearchBar } from 'components/searchbar/SearchBar';
 
 const Movies = () => {
-  return <main>
-    
-  </main>;
+  return (
+    <main>
+      <SearchBar />
+    </main>
+  );
 };
 
 export default Movies;

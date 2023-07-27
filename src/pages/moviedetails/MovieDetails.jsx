@@ -1,4 +1,4 @@
-import css from './MovieDetails.module';
+import css from './MovieDetails.module.css';
 import { FormPreviousLink } from 'grommet-icons';
 
 const MovieDetails = () => {
