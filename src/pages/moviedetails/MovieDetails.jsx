@@ -1,7 +1,7 @@
-import css from './Movies.module.css';
+import css from './MovieDetails.module';
 import { FormPreviousLink } from 'grommet-icons';
 
-const Movies = () => {
+const MovieDetails = () => {
   return (
     <main>
       <div className={css.moviesContainer}>
@@ -22,4 +22,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default MovieDetails;
