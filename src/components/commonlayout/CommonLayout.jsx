@@ -7,10 +7,10 @@ export const CommonLayout = () => {
     <div className={css.container}>
       <header className={css.header}>
         <nav className={css.navigation}>
-          <NavLink to="/" className={css.navigationItem}>
+          <NavLink to="/" className={css.item}>
             Home
           </NavLink>
-          <NavLink to="/movies" className={css.navigationItem}>
+          <NavLink to="/movies" className={css.item}>
             Movies
           </NavLink>
         </nav>
