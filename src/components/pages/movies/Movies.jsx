@@ -9,6 +9,14 @@ const Movies = () => {
           <FormPreviousLink color="black" />
           Go back
         </button>
+        <div className={css.movieContainer}>MOVIE</div>
+        <div className={css.additionalInfoMovieContainer}>
+          <p className={css.additionalInfoMovieTitle}>Additional information</p>
+          <ul className={css.additionalInfoMovieList}>
+            <li className={css.additionalInfoMovieListItem}>Cast</li>
+            <li className={css.additionalInfoMovieListItem}>Revies</li>
+          </ul>
+        </div>
       </div>
     </main>
   );
