@@ -5,7 +5,7 @@ export const SearchMovieList = ({ searchResults }) => {
   return (
     <ul className={css.searchMovieList}>
       {searchResults.map(el => (
-        <li key={el.id} className={css.searchMovieListItem}>
+        <li key={el.id} className={css.listItem}>
           <Link to={`/movies/${el.id}`} className={css.link}>
             {el.title}
           </Link>

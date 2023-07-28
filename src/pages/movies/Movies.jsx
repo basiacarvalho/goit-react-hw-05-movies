@@ -3,6 +3,7 @@ import { SearchMovieList } from 'components/searchmovielist/SearchMovieList';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchForMovies } from 'utils';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -29,7 +30,7 @@ const Movies = () => {
   };
 
   return (
-    <main>
+    <main className={css.container}>
       <SearchBar handleSubmit={handleSubmit} />
       <SearchMovieList searchResults={searchResults} />
     </main>
