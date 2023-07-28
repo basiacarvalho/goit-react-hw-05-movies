@@ -23,3 +23,19 @@ export const fetchTrendingMovies = async () => {
   });
   return movieList;
 };
+
+export const searchForMovies = async movieName => {
+  const result = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${movieName}`,
+    options
+  );
+
+  const results = result.data.results;
+  const searchResults = results.map(movie => {
+    return {
+      id: movie.id,
+      title: movie.title,
+    };
+  });
+  return searchResults;
+};
