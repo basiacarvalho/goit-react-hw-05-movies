@@ -1,6 +1,24 @@
 import css from './MovieInfo.module.css';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getMovieDetails } from 'utils';
+import { useState } from 'react';
 
 export const MovieInfo = () => {
+  const [movieDetails, setMovieDetails] = useState({});
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      const movieId = location.pathname.split('/').pop();
+      const result = await getMovieDetails(movieId);
+      setMovieDetails(result);
+    };
+
+    fetchMovieDetails();
+  }, [location]);
+
   return (
     <div className={css.movieContainer}>
       <img
@@ -9,7 +27,7 @@ export const MovieInfo = () => {
         alt=""
       ></img>
       <div className={css.movieInfo}>
-        <h3 className={css.title}>Nazwa Filmu</h3>
+        <h3 className={css.title}>{movieDetails.movieTitle}</h3>
         <p className={css.description}>'User Scores: ${74}%'</p>
         <h5 className={css.title}>Overview</h5>
         <p className={css.description}>

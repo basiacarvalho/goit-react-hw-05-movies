@@ -39,3 +39,21 @@ export const searchForMovies = async movieName => {
   });
   return searchResults;
 };
+
+export const getMovieDetails = async movieId => {
+  const result = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}`,
+    options
+  );
+
+  const movieDetails = result.data;
+  return {
+    moviePoster: movieDetails.poster_path,
+    movieTitle: movieDetails.title,
+    movieReleaseDate: new Date(movieDetails.movieReleaseDate).getFullYear(),
+    movieOverview: movieDetails.overview,
+    movieGenres: movieDetails.genres.map(movieGenre => {
+      return movieGenre.name;
+    }),
+  };
+};
