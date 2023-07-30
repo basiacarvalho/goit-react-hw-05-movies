@@ -77,3 +77,20 @@ export const getMovieCast = async movieId => {
   });
   return castList;
 };
+
+export const getMovieReviews = async movieId => {
+  const result = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews`,
+    options
+  );
+
+  const movieReviews = result.data.results;
+  const searchResults = movieReviews.map(movieReview => {
+    return {
+      id: movieReview.id,
+      author: movieReview.author,
+      content: movieReview.content,
+    };
+  });
+  return searchResults;
+};

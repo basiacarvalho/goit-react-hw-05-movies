@@ -5,6 +5,7 @@ import css from './MovieDetails.module.css';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Cast } from 'components/cast/Cast';
+import { Reviews } from 'components/reviews/Reviews';
 
 const MovieDetails = () => {
   const [movieId, setMovieId] = useState('');
@@ -37,6 +38,7 @@ const MovieDetails = () => {
       <MovieInfo movieId={movieId} />
       <AdditionalInfo movieId={movieId} />
       {location.pathname.includes('cast') && <Cast />}
+      {location.pathname.includes('reviews') && <Reviews />}
     </main>
   );
 };

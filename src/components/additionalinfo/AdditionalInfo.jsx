@@ -10,7 +10,7 @@ export const AdditionalInfo = ({ movieId }) => {
           <Link to={`/movies/${movieId}/cast`}>Cast</Link>
         </li>
         <li className={css.listItem}>
-          <Link>Reviews</Link>
+          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
         </li>
       </ul>
     </div>
