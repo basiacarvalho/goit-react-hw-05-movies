@@ -13,7 +13,11 @@ export const Cast = () => {
       const urlParts = location.pathname.split('/');
       const movieId = urlParts[urlParts.length - 2];
       const result = await getMovieCast(movieId);
-      setMovieCastDetails(result);
+      setMovieCastDetails(
+        result.filter(item => {
+          return item.profileImage !== null;
+        })
+      );
     };
 
     fetchMovieCastDetails();
@@ -22,7 +26,7 @@ export const Cast = () => {
   return (
     <ul className={css.list}>
       {movieCastDetails.map(item => (
-        <li className={css.listItem}>
+        <li className={css.listItem} key={item.id}>
           <img
             className={css.image}
             src={`https://image.tmdb.org/t/p/w92${item.profileImage}`}

@@ -69,6 +69,7 @@ export const getMovieCast = async movieId => {
   const movieCastDetails = result.data.cast;
   const castList = movieCastDetails.map(listItem => {
     return {
+      id: listItem.id,
       profileImage: listItem.profile_path,
       actorName: listItem.name,
       character: listItem.character,
