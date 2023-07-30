@@ -1,0 +1,26 @@
+.list {
+  padding: 15px 0;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.infoItem__name::before {
+  content: '~';
+  font-weight: bolder;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.infoItem__role {
+  margin-left: 15px;
+}
+
+.image {
+  margin-left: 15px;
+}

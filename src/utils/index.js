@@ -59,3 +59,20 @@ export const getMovieDetails = async movieId => {
       .join(' '),
   };
 };
+
+export const getMovieCast = async movieId => {
+  const result = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits`,
+    options
+  );
+
+  const movieCastDetails = result.data.cast;
+  const castList = movieCastDetails.map(listItem => {
+    return {
+      profileImage: listItem.profile_path,
+      actorName: listItem.name,
+      character: listItem.character,
+    };
+  });
+  return castList;
+};

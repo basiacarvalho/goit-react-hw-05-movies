@@ -2,6 +2,11 @@
   cursor: pointer;
   font-size: 18px;
   margin-top: 10px;
+  margin-left: 15px;
+}
+
+.listItem * {
+  color: #757575;
 }
 
 .listItem::before {
