@@ -11,6 +11,7 @@ export const MovieInfo = ({ movieId }) => {
     const fetchMovieDetails = async () => {
       const result = await getMovieDetails(movieId);
       setMovieDetails(result);
+      console.log(result);
     };
     if (movieId !== '') {
       fetchMovieDetails();
@@ -30,7 +31,9 @@ export const MovieInfo = ({ movieId }) => {
             <h3 className={css.title}>
               {movieDetails.movieTitle} ({movieDetails.movieReleaseDate})
             </h3>
-            <p className={css.description}>'User Scores: {74}%'</p>
+            <p className={css.description}>
+              User Scores: {Math.trunc(movieDetails.movieScores * 10)}%
+            </p>
             <h5 className={css.title}>Overview</h5>
             <p className={css.description}>{movieDetails.movieOverview}</p>
             <h6 className={css.title}>Genres</h6>

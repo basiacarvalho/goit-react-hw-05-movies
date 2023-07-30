@@ -50,6 +50,7 @@ export const getMovieDetails = async movieId => {
   return {
     moviePoster: movieDetails.poster_path,
     movieTitle: movieDetails.title,
+    movieScores: movieDetails.vote_average,
     movieReleaseDate: new Date(movieDetails.release_date).getFullYear(),
     movieOverview: movieDetails.overview,
     movieGenres: movieDetails.genres
