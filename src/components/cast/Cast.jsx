@@ -24,22 +24,28 @@ export const Cast = () => {
   }, [location]);
 
   return (
-    <ul className={css.list}>
-      {movieCastDetails.map(item => (
-        <li className={css.listItem} key={item.id}>
-          <img
-            className={css.image}
-            src={`https://image.tmdb.org/t/p/w92${item.profileImage}`}
-            alt={item.actorName}
-          ></img>
-          <ul className={css.info}>
-            <li className={css.infoItem__name}>{item.actorName}</li>
-            <li
-              className={css.infoItem__role}
-            >{`Character: ${item.character}`}</li>
-          </ul>
-        </li>
-      ))}
-    </ul>
+    <>
+      {movieCastDetails.length === 0 ? (
+        <p>We don't have any cast info for this movie.</p>
+      ) : (
+        <ul className={css.list}>
+          {movieCastDetails.map(item => (
+            <li className={css.listItem} key={item.id}>
+              <img
+                className={css.image}
+                src={`https://image.tmdb.org/t/p/w92${item.profileImage}`}
+                alt={item.actorName}
+              ></img>
+              <ul className={css.info}>
+                <li className={css.infoItem__name}>{item.actorName}</li>
+                <li
+                  className={css.infoItem__role}
+                >{`Character: ${item.character}`}</li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
