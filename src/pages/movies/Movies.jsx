@@ -15,7 +15,6 @@ const Movies = () => {
 
     async function fetchMoviesByName() {
       const results = await searchForMovies(movieName);
-      console.log(results);
       setSearchResults(results);
     }
 

@@ -11,7 +11,6 @@ export const MovieInfo = ({ movieId }) => {
     const fetchMovieDetails = async () => {
       const result = await getMovieDetails(movieId);
       setMovieDetails(result);
-      console.log(result);
     };
     if (movieId !== '') {
       fetchMovieDetails();

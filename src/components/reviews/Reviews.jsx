@@ -13,7 +13,6 @@ export const Reviews = () => {
       const urlParts = location.pathname.split('/');
       const movieId = urlParts[urlParts.length - 2];
       const result = await getMovieReviews(movieId);
-      console.log(result);
       setMovieReviews(result);
     };
 
