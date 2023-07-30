@@ -12,25 +12,25 @@ const MovieDetails = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const removeUrlPrefix = () => {
+      const prefix = '/movies/';
+      const movieIndex = location.pathname.indexOf(prefix);
+      return location.pathname.slice(movieIndex + prefix.length);
+    };
+
+    const extractMovieId = url => {
+      const index = url.indexOf('/');
+      if (index === -1) {
+        return url;
+      } else {
+        return url.slice(0, index);
+      }
+    };
+
     const url = removeUrlPrefix();
     const movieId = extractMovieId(url);
     setMovieId(movieId);
   }, [location]);
-
-  const removeUrlPrefix = () => {
-    const prefix = '/movies/';
-    const movieIndex = location.pathname.indexOf(prefix);
-    return location.pathname.slice(movieIndex + prefix.length);
-  };
-
-  const extractMovieId = url => {
-    const index = url.indexOf('/');
-    if (index === -1) {
-      return url;
-    } else {
-      return url.slice(0, index);
-    }
-  };
 
   return (
     <main className={css.container}>
