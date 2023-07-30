@@ -23,21 +23,25 @@ export const MovieInfo = () => {
     <div className={css.movieContainer}>
       <img
         className={css.movieImage}
-        src="https://via.placeholder.com/200x100"
-        alt=""
+        src={`https://image.tmdb.org/t/p/w185${movieDetails.moviePoster}`}
+        alt={movieDetails.movieTitle}
       ></img>
       <div className={css.movieInfo}>
-        <h3 className={css.title}>{movieDetails.movieTitle}</h3>
-        <p className={css.description}>'User Scores: ${74}%'</p>
+        <h3 className={css.title}>
+          {movieDetails.movieTitle} ({movieDetails.movieReleaseDate})
+        </h3>
+        <p className={css.description}>'User Scores: {74}%'</p>
         <h5 className={css.title}>Overview</h5>
-        <p className={css.description}>
-          Lorem ipsum dolor sit amet. Hic consequatur fugit sed officiis
-          voluptatem non libero maxime. Aut sunt obcaecati sed assumenda officia
-          quo omnis corporis est neque quas aut voluptas quae.
-        </p>
+        <p className={css.description}>{movieDetails.movieOverview}</p>
         <h6 className={css.title}>Genres</h6>
-        <p className={css.description}>Drama History War</p>
+        <p className={css.description}>{movieDetails.movieGenres}</p>
       </div>
     </div>
   );
 };
+
+//  moviePoster: movieDetails.poster_path,
+//     movieTitle: movieDetails.title,
+//     movieReleaseDate: new Date(movieDetails.movieReleaseDate).getFullYear(),
+//     movieOverview: movieDetails.overview,
+//     movieGenres: movieDetails.genres.map(movieGenre => {

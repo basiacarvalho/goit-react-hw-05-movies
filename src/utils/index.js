@@ -50,10 +50,12 @@ export const getMovieDetails = async movieId => {
   return {
     moviePoster: movieDetails.poster_path,
     movieTitle: movieDetails.title,
-    movieReleaseDate: new Date(movieDetails.movieReleaseDate).getFullYear(),
+    movieReleaseDate: new Date(movieDetails.release_date).getFullYear(),
     movieOverview: movieDetails.overview,
-    movieGenres: movieDetails.genres.map(movieGenre => {
-      return movieGenre.name;
-    }),
+    movieGenres: movieDetails.genres
+      .map(movieGenre => {
+        return movieGenre.name;
+      })
+      .join(' '),
   };
 };
