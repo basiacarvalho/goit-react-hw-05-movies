@@ -1,5 +1,6 @@
 import css from './AdditionalInfo.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const AdditionalInfo = ({ movieId }) => {
   return (
@@ -15,4 +16,8 @@ export const AdditionalInfo = ({ movieId }) => {
       </ul>
     </div>
   );
+};
+
+AdditionalInfo.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };

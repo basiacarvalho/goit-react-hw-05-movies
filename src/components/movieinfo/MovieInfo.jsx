@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { getMovieDetails } from 'utils';
 import { useState } from 'react';
 import { Loader } from 'components/loader/Loader';
+import PropTypes from 'prop-types';
 
 export const MovieInfo = ({ movieId }) => {
   const [movieDetails, setMovieDetails] = useState({});
@@ -44,4 +45,8 @@ export const MovieInfo = ({ movieId }) => {
       )}
     </>
   );
+};
+
+MovieInfo.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };

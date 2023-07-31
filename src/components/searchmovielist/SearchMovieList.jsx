@@ -1,5 +1,6 @@
 import css from './SearchMovieList.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const SearchMovieList = ({ searchResults }) => {
   return (
@@ -13,4 +14,8 @@ export const SearchMovieList = ({ searchResults }) => {
       ))}
     </ul>
   );
+};
+
+SearchMovieList.propTypes = {
+  searchResults: PropTypes.array,
 };
